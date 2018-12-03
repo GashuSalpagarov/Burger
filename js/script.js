@@ -1,10 +1,8 @@
 let reviews = document.querySelector('.reviews'),
     popup = document.querySelector('.popup'),
-    popupContent = document.querySelector('.popup__content'),
     popupName = document.querySelector('.popup__name'),
     popupText = document.querySelector('.popup__text'),
-    popupClose = document.querySelector('.popup__close'),
-    popupContentList = document.querySelector('.popup__content div');
+    popupClose = document.querySelector('.popup__close');
 
 
 popup.addEventListener('click', function (e) {

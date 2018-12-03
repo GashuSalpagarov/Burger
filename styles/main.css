@@ -545,14 +545,12 @@ a {
 
 .down-btn {
   width: 30px;
-  position: absolute;
-  bottom: 40px;
-  left: calc(50% - 15px); }
+  margin: 0 auto 40px auto; }
   .down-btn img {
     width: 100%; }
   @media screen and (max-width: 425px) {
     .down-btn {
-      bottom: 20px; } }
+      margin-bottom: 20px; } }
 
 .best {
   background: url(../images/best/bg.jpg);
@@ -584,20 +582,39 @@ a {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        max-width: initial;
+        max-width: calc(100% - 60px);
+        margin: 0 auto;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
         margin-bottom: 15px; } }
+    @media screen and (max-width: 425px) {
+      .best__item {
+        max-width: calc(100% - 20px); } }
   .best__img {
     max-height: 100px; }
+    @media screen and (max-width: 768px) {
+      .best__img {
+        margin-right: 20px;
+        max-width: 100px;
+        width: 100%;
+        -o-object-fit: contain;
+        object-fit: contain; } }
+    @media screen and (max-width: 425px) {
+      .best__img {
+        max-width: 85px;
+        width: 100%; } }
   .best__name {
     font-family: 'Lifehack-Medium';
     font-size: 24px;
-    margin: 20px 0; }
+    margin: 20px 0;
+    line-height: 1; }
     @media screen and (max-width: 768px) {
       .best__name {
         margin: 10px 0; } }
+    @media screen and (max-width: 425px) {
+      .best__name {
+        font-size: 20px; } }
   .best__desc {
     font-size: 14px;
     color: #0000007a;
