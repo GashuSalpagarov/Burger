@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Ubuntu-Light';
+    height: 100%;
+    font-size: 16px;
+    line-height: 1.42;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothig: grayscale;
+    color: $black;
+}
+.wrapper{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.section{
+    min-height: 568px;
+    height: 100vh;
+}
+.container{
+    max-width: 940px;
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style-type: none;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.btn{
+    padding: 10px 15px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: $orange;
+    border-radius: 5px;
+    font-family: 'Ubuntu-Medium';
+    height: fit-content;
+    &:hover{
+        background: $red;
+    }
+}

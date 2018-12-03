@@ -1,0 +1,100 @@
+$i: 8;
+.reviews{
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: 768px){
+    height: 100vh;
+}
+
+&__item{
+    width: 25%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    justify-content: center;
+    background-size: auto 100%;
+    background-position: center;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    @while $i > 0{
+      &--#{$i}{
+      background-image: url("../images/reviews/reviews__img#{$i}.jpg");
+      }
+      $i: $i - 1;
+    }
+  @media screen and (max-width: 992px){
+    background-size: cover;
+    &--2{
+      background-position-x: 90%;
+    }
+  }
+  @media screen and (max-width: 768px){
+    padding: 0 5px;
+    width: 50%;
+    height: 25%;
+  }
+  &:before{
+      content: '';
+      height: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transition: opacity .3s linear;
+      z-index: -1;
+    }
+    &:hover:before{
+      opacity: 1;
+    }
+  }
+  &__name{
+    font-family: 'Gagalin-Regular';
+    font-size: 14px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity .3s linear;
+    @media screen and (max-width: 768px){
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+  &__item:hover &__name{
+    opacity: 1;
+  }
+  &__text{
+    color: #fff;
+    opacity: 0;
+    font-size: 14px;
+    line-height: 2;
+    transition: opacity .3s linear;
+    margin: 20px 0;
+    @media screen and (max-width: 991px){
+      line-height: 1.4;
+    }
+    @media screen and (max-width: 768px){
+      display: none;
+    }
+  }
+  &__item:hover &__text{
+    opacity: 1;
+  }
+  &__btn{
+    width: fit-content;
+    opacity: 0;
+    transition: opacity .3s linear;
+    cursor: pointer;
+    line-height: 1;
+    font-size: 13px;
+    @media screen and (max-width: 768px){
+      margin: 0 auto;
+    }
+  }
+  &__item:hover &__btn{
+    opacity: 1;
+  }
+}

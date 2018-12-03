@@ -1,0 +1,228 @@
+.header {
+  font-family: 'Ubuntu-Medium';
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  max-width: 940px;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  @media screen and (max-width: 910px){
+    width: 100%;
+  }
+  @media screen and (max-width: 768px){
+    justify-content: flex-end;
+    margin-right: 55px;
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    @media screen and (max-width: 910px){
+      justify-content: space-around;
+    }
+    @media screen and (max-width:768px){
+      -webkit-font-smoothing: antialiased;
+      /* to stop flickering of text in safari */
+      transform-origin: 0% 0%;
+      transform: translate(110%, 0);
+      transition: transform .5s cubic-bezier(0.77,0.2,0.05,1.0);
+      flex-direction: column;
+      position: fixed;
+      right: 0;
+      background: #000000e0;
+      padding: 0;
+      text-align: center;
+      top: -10px;
+      justify-content: center;
+      height: calc(100vh + 10px);
+    }
+  }
+  &__item {
+    @media screen and (max-width:768px){
+      font-size: 30px;
+      line-height: 2;
+    }
+    font-size: 13px;
+    transition: all .3s;
+    :hover{
+      color: #e45028;
+    }
+
+    &::after {
+      content: "";
+      width: 5px;
+      height: 5px;
+      margin: 0 15px;
+      display: inline-block;
+      border-radius: 50%;
+      background: #fff;
+      @media screen and (max-width: 910px){
+        display: none;
+      }
+    }
+
+    &:last-child {
+      margin-right: 15px;
+      @media screen and (max-width:768px){
+        margin-right: initial;
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+$transition-duration: 0.5s;
+.toggle-container{
+  width: 35px;
+  display: none;
+  position: fixed;
+  right: 10px;
+  user-select: none;
+  @media screen and (max-width: 768px){
+    display: block;
+  }
+
+}
+.toggle-line{
+  width: 33px;
+  margin-bottom: 5px;
+  position: relative;
+  height: 4px;
+  display: block;
+  background: #fff;
+  border-radius: 3px;
+  transform-origin: 4px 0;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+  &:first-child {
+    transform-origin: 0% 0%;
+  }
+  &:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+}
+#toggle-checkbox{
+  display: none;
+  &:checked {
+    padding: 20px;
+    & ~ .nav__list {
+      transform: none;
+    }
+    & ~ label span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-1px, -1px);
+      &:nth-last-child(2){
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+      &:nth-last-child(1) {
+        transform: rotate(-45deg) translate(-3px, -3px);
+      }
+
+    }
+  }
+}
+
+
+
+.do {
+  background: url(../images/do/bg-texture.png), url(../images/do/bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 10px;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: 768px){
+      flex-direction: column;
+      justify-content: start;
+    }
+    @media screen and (max-width: 425px){
+      padding-top: 40px;
+    }
+  }
+
+  &__img {
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    background: url(../images/do/do__img-bg.png);
+    background-position: center 40%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    @media screen and (max-width: 768px){
+      max-width: 400px;
+    }
+
+    img {
+      max-width: 90%;
+      max-height: 100%;
+    }
+  }
+
+  &__text {
+    height: min-content;
+    padding-top: 100px;
+    width: min-content;
+    position: relative;
+    @media screen and (max-width: 768px){
+      padding: 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: 65px;
+    font-family: 'Lifehack-Medium';
+    color: #fff;
+    line-height: 1;
+    @media screen and (max-width: 425px){
+      font-size: 45px;
+    }
+  }
+}
+
+.title {
+  font-family: 'Gagalin-Regular';
+  font-weight: 100;
+  font-size: 72px;
+  color: #000;
+  @media screen and (max-width: 425px){
+    font-size: 50px;
+  }
+
+  &--color__yellow {
+    color: $yellow;
+    margin: 0;
+  }
+}
+
+.down-btn {
+  width: 30px;
+  position: absolute;
+  bottom: 40px;
+  left: calc(50% - 15px);
+
+  img {
+    width: 100%;
+  }
+  @media screen and (max-width: 425px){
+   bottom: 20px;
+  }
+}
