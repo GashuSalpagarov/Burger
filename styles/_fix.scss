@@ -1,0 +1,36 @@
+.fix {
+  position: fixed;
+  top: 85px;
+  right: 45px;
+  @media screen and (max-width: 991px){
+    display: none;
+  }
+  &__link {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    &:hover{
+      border: 1px solid #fff;
+    }
+
+    &::after {
+      content: "";
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      background: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+    }
+
+    &.active {
+      border: 1px solid #fff;
+    }
+
+  }
+}
